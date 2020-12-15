@@ -30,7 +30,7 @@ namespace db
 enum class DatabaseKind
 {
     LevelDB,
-#ifndef QTUM_BUILD
+#ifndef GLITCH_BUILD
     RocksDB,
 #endif
     MemoryDB

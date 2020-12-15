@@ -28,7 +28,7 @@ enum class VMKind
 {
     Interpreter,
     Legacy,
-#ifndef QTUM_BUILD
+#ifndef GLITCH_BUILD
     DLL
 #endif
 };

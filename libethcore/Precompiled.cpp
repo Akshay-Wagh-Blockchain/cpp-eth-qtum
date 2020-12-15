@@ -26,8 +26,8 @@
 #include <libdevcrypto/Common.h>
 #include <libdevcrypto/LibSnark.h>
 #include <libethcore/Common.h>
-#ifdef QTUM_BUILD
-#include <qtum/qtumutils.h>
+#ifdef GLITCH_BUILD
+#include <glitch/glitchutils.h>
 #endif
 using namespace std;
 using namespace dev;
@@ -102,9 +102,9 @@ ETH_REGISTER_PRECOMPILED(btc_ecrecover)(bytesConstRef _in)
     try
     {
         bool recovered = false;
-#ifdef QTUM_BUILD
+#ifdef GLITCH_BUILD
         u256 v = (u256)in.v;
-        recovered = qtumutils::btc_ecrecover(in.hash, v, in.r, in.s, ret);
+        recovered = glitchutils::btc_ecrecover(in.hash, v, in.r, in.s, ret);
 #endif
         if(recovered)
         {
